@@ -1,1 +1,17 @@
 # heroku-ruby
+- heroku-admin
+	-  `heroku create`
+	-  `git subtree push --prefix heroku-admin heroku master`
+	-  `heroku run rake db:migrate` or `heroku run rake db:schema:load` If already has schema.
+	-  `heroku ps:scale web=1`
+	-  `heroku open`
+	-  `heroku run bash` Server tunnel
+	-  `heroku run rails console` Server run rails console
+	-  `https://tranquil-fjord-55419.herokuapp.com/shops`
+- heroku-api
+	-  `heroku create`
+	-  `heroku git:remote -a APP_NAME` add remote for new app
+ 	-  `git subtree push --prefix heroku-api heroku master`
+	-  Sharing DB https://devcenter.heroku.com/articles/heroku-postgresql#sharing-heroku-postgres-between-applications
+	- `heroku ps:scale web=1`
+	-  `https://guarded-anchorage-62093.herokuapp.com/api/v1/shops`

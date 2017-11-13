@@ -1,0 +1,13 @@
+p#notice
+  = notice
+p
+  | Shop:
+  = @shop.name
+p
+  = @shop.description
+p
+  = @shop.address
+.btn.btn-default
+  = link_to 'Edit', edit_shop_path(@shop)
+.btn.btn-default
+  = link_to 'Back', shops_path

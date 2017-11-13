@@ -1,0 +1,22 @@
+h2
+  | Create new shop
+
+= form_for shop, method: :post, local: true, class: "form-horizontal" do |form|
+  div.form-group
+    lable.control-label.col-sm-2 for="name"
+      | Name:
+    div.col-sm-10
+      = form.text_field :name, placeholder: "Enter shop name"
+  div.form-group
+    lable.control-label.col-sm-2 for="description"
+      | Description:
+    div.col-sm-10
+      = form.text_field :description, placeholder: "Enter description"
+  div.form-group
+    lable.control-label.col-sm-2 for="address"
+      | Address:
+    div.col-sm-10
+      = form.text_field :address, placeholder: "Enter address"
+  div.form-group
+    div.col-sm-offset-2.col-sm-10
+      = form.submit "Create"
