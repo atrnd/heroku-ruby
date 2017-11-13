@@ -9,6 +9,7 @@
 	-  `heroku run rails console` Server run rails console
 - heroku-api
 	-  `heroku create`
-	-  `git subtree push --prefix heroku-api heroku master`
+	-  `heroku git:remote -a APP_NAME` add remote for new app
+ 	-  `git subtree push --prefix heroku-api heroku master`
 	-  Sharing DB https://devcenter.heroku.com/articles/heroku-postgresql#sharing-heroku-postgres-between-applications
 	- `heroku ps:scale web=1`
