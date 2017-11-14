@@ -24,7 +24,6 @@ class ShopsController < ApplicationController
   # POST /shops
   # POST /shops.json
   def create
-    binding.pry
     @shop = Shop.new(shop_params)
 
     respond_to do |format|
