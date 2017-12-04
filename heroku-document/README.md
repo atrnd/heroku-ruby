@@ -47,3 +47,23 @@
         - `<command>` – a command line to launch the process, such as rake jobs:work
 
   - More information: [Procfile](https://devcenter.heroku.com/articles/procfile#process-types-as-templates)
+
+**Heroku redis**
+
+  - Cd vào folder
+  - Run heroku config:
+    > set REDIS_PROVIDER=REDISCLOUD_URL
+    > Note: check env variable https://devcenter.heroku.com/articles/config-vars
+  - Create new file config/redis.rb then add new lines:
+    > uri = ENV["REDISTOGO_URL"] || "redis://localhost:6379/"
+    > REDIS = Redis.new(:url => uri)
+  - File Procfile, add new line:
+    > worker: bundle exec sidekiq -c 5 -v
+
+  > Note: Vì môi trường production nên sử dụng password apps cho gmail
+
+**Turn on worker**
+- Install plugin Heroku Redis :: Redis
+  > Check heroku config | grep REDIS
+
+
