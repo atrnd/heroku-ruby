@@ -1,6 +1,6 @@
 # Concepts
 
-**Dynos**
+#### Dynos
   - Dyno is a Linux container that web application run on it
   - 3 types of dyno's configuration:
     - Web dyno
@@ -13,7 +13,7 @@
   - Only free dynos will sleep after 30 minutes of inactivity
   - Dyno information: [Heroku Dyno](https://devcenter.heroku.com/articles/free-dyno-hours)
 
-**Load Balancing**
+#### Load Balancing
   - In Heroku, load balancing means scale dynos
   - We can scale web app except Free and Hobby
   - By default, all applications are limited to 100 dynos a process type can’t be scaled to more than 10 dynos for performance dynos
@@ -22,7 +22,7 @@
         > heroku ps:scale web=2 worker=1
     - Autoscaling: is configured from your app’s Resources tab on the Heroku Dashboard
 
-**Database: Heroku postgresql**
+#### Database: Heroku postgresql
   - We have to choose the right Heroku Postgres plan in 3 types:
     - Hobby tier (Not support Rollback, No fork/follow DB, No in-memory cache)
     - Standard tier
@@ -39,7 +39,7 @@
 
   - Database information: [Heroku Postgres](https://devcenter.heroku.com/articles/heroku-postgresql)
 
-**Process types as templates**
+#### Process types as templates
   - A Procfile contains a number of process type declarations, each on a new line. Each process type is a declaration of a command that is executed when a dyno of that process type is started
   - Declaring process types:
     > `<process type>: <command>`
@@ -48,7 +48,7 @@
 
   - More information: [Procfile](https://devcenter.heroku.com/articles/procfile#process-types-as-templates)
 
-**Heroku redis**
+#### Heroku redis
 
   - Cd vào folder
   - Run heroku config:
@@ -62,7 +62,7 @@
 
   > Note: Vì môi trường production nên sử dụng password apps cho gmail
 
-**Turn on worker**
+#### Turn on worker
 - Install plugin Heroku Redis :: Redis
   > Check heroku config | grep REDIS
 
