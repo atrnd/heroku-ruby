@@ -1,1 +1,2 @@
-release: rails db:migrate
+release: bundle exec rake db:migrate
+worker: bundle exec sidekiq -c 5 -v
