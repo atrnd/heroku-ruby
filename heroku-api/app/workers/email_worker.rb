@@ -4,7 +4,7 @@ class EmailWorker
   def perform(user_id)
     user = User.find(user_id)
     # UserMailer.welcome_email(user).deliver
-    1000000.times do |i|
+    1000.times do |i|
       Shop.create(name: i)
     end
   end
