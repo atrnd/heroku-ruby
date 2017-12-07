@@ -17,7 +17,10 @@ module Api::V1
     # POST /users
     def create
       @user = User.new(email: params[:email], name: params[:name])
-      if @user.save && EmailWorker.perform_async(@user.id)
+      if @user.save
+        1000000.times do |i|
+          EmailWorker.perform_async(i)
+        end
         render json: @user, status: :created, location: api_v1_user_url(@user)
       else
         render json: @user.errors, status: :unprocessable_entity
